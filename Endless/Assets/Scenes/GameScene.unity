@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerSpeed: 6.67
   enemySpeed: 0
-  bulletSpeed: 5
+  bulletSpeed: 10
   timeBetweenShots: 2000
 --- !u!4 &351602422
 Transform:

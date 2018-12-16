@@ -5,6 +5,9 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float speed;
+    private float bulletLifeTime=2;
+
+    public int damageToGive;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,13 +18,19 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        bulletLifeTime -= Time.deltaTime;
+        if(bulletLifeTime<=0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter(Collision other)
     {
-        if (collision.tag == "wall")
+        if (other.gameObject.tag == "enemy")
         {
-            Destroy(collision.gameObject);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            //Destroy(other.gameObject);
             Destroy(gameObject);
             //GameObject instantiatedParticleSystem = Instantiate(particleExplosionSystem, transform.position, transform.rotation);
             //Destroy(instantiatedParticleSystem, 1f);

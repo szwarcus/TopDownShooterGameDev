@@ -9,6 +9,7 @@ public class GunControler : MonoBehaviour
     private float bulletSpeed;
 
     private float timeBetweenShots;
+    private float nextFire;
     private float shotCounter;
 
     private BalanceMenager BM;
@@ -39,11 +40,16 @@ public class GunControler : MonoBehaviour
                 shotCounter = timeBetweenShots;
                 BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 newBullet.speed = bulletSpeed;
+
             }
         }
         else
         {
-            shotCounter = 0;
+            if (Time.time > nextFire)
+            {
+                nextFire = Time.time + timeBetweenShots;
+                shotCounter =0;
+            }
         }
 
     }
