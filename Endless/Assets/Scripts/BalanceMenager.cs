@@ -8,4 +8,8 @@ public class BalanceMenager : MonoBehaviour {
 
     public float enemySpeed;
 
+    public float bulletSpeed;
+
+    public float timeBetweenShots;
+
 }

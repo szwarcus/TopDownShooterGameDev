@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerControls : MonoBehaviour {
+public class PlayerControls : MonoBehaviour
+{
     /*
      * Skryp pozwala na odczytywanie sygnałów wejściowych na klawiturę i myszkę.
      * 
      */
 
     private PlayerMovementScript movementScript;
+    public GunControler gun;
     private Vector3 direction = new Vector3();
 
     private void Awake()
@@ -18,9 +20,11 @@ public class PlayerControls : MonoBehaviour {
             Debug.LogError("PlayerControls: player movement script not found!");
     }
 
-    void Update() {
+    void Update()
+    {
         GetInput();
         movementScript.Move(direction);             // Wykonaj ruch w zadanym kierunku
+        movementScript.Rotate();
     }
 
     // Odczytanie wejść
@@ -42,6 +46,14 @@ public class PlayerControls : MonoBehaviour {
         if (Input.GetKey(KeyCode.D))
         {
             direction += new Vector3(1, 0, 0);
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            gun.isFiring = true;
+        }
+        if (Input.GetMouseButtonUp(0))
+        {
+            gun.isFiring = false;
         }
     }
 }

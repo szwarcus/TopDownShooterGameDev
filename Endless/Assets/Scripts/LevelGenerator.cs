@@ -28,7 +28,7 @@ public class LevelGenerator : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
             Debug.LogError("LevelGenerator: no player found!");
-        navMeshSurface = player.transform.GetChild(1).transform.GetComponent<NavMeshSurface>();
+        navMeshSurface = player.transform.GetComponentInChildren<NavMeshSurface>();
         if (navMeshSurface == null)
             Debug.LogError("LevelGenerator: no nav mash agent found!");
     }

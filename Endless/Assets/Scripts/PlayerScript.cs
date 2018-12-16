@@ -22,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
         navMesh.transform.parent = transform;
         navMesh.transform.position = new Vector3(transform.position.x, 0, transform.position.z);
         navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
-        GameObject.FindGameObjectWithTag("MainCamera").transform.parent = transform;
-        GameObject.FindGameObjectWithTag("MainCamera").transform.position = new Vector3(transform.position.x, 10, transform.position.z);
+        //GameObject.FindGameObjectWithTag("MainCamera").transform.parent = transform;
+
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - wall
   - NavMesh
   - Ground
+  - bullet
+  - enemy
   layers:
   - Default
   - TransparentFX
