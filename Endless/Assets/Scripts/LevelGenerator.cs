@@ -41,7 +41,7 @@ public class LevelGenerator : MonoBehaviour {
 	// Create a grid based level
 	public void GenerateLevel()
 	{
-        Debug.Log(transform.childCount);
+//        Debug.Log(transform.childCount);
         // Loop over the grid
         for (int x = 0; x <= width; x+=2)
 		{
@@ -58,7 +58,7 @@ public class LevelGenerator : MonoBehaviour {
                 }
                 else
                 {
-                    if (Random.value > .7f)// Should we place a wall?
+                    if (Random.value > .8f)// Should we place a wall?
                     {
                         // Spawn a wall
                         Vector3 pos = new Vector3(x - width / 2f + transform.position.x, 1f, y - height / 2f + transform.position.z);
@@ -74,6 +74,6 @@ public class LevelGenerator : MonoBehaviour {
             }
 		}
         navMeshSurface.BuildNavMesh();
-        Debug.Log(transform.childCount);
+//        Debug.Log(transform.childCount);
     }
 }
