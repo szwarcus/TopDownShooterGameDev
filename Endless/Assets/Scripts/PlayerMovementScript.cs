@@ -23,7 +23,7 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         speed = BM.playerSpeed;         // wczytanie prędkości z menagera balansu
-        transform.position = new Vector3(0, 2, 0);
+        transform.position = new Vector3(0, 1.5f, 0);
 
     }
 
