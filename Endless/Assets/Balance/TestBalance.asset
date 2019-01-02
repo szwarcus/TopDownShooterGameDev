@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45be338f49c41a64bae923e9d8771b06, type: 3}
+  m_Name: TestBalance
+  m_EditorClassIdentifier: 
+  enemySpawnRate: 10
+  enemyMoveSpeed: 1
+  enemyHitPoints: 10
+  enemyDamage: 10
+  enemyAttackSpeed: 0.2
+  playerMoveSpeed: 1
+  playerHitPoints: 173
+  weaponDamage: 10
+  weaponAttackSpeed: 2
+  weaponAttackRange: 0
+  experiencePoints: 1
+  experiencePointsChange: 0.2
+  HitPointsUp: 1
+  rangeDamageUp: 1
+  meleeDamageUp: 1
+  changeRate: 10
+  hordeSpawnRate: 3
+  maxLevelSafeFromHorde: 1
