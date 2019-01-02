@@ -90,5 +90,15 @@ public class Balance : ScriptableObject
 
     [Tooltip("The number of progress level before which horde will never spawn")]
     [Range(1, 5)]
-    public int maxLevelSafeFromHorde; 
+    public int maxLevelSafeFromHorde;
+
+    [Header("Starting difficulty level")]
+
+    [Tooltip("Starting difficulty level:\n" +
+        "1 -> very easy (enemy: -50% HP, -40%DMG. Score: -90%),\n" +
+        "2 -> easy (enemy: -25% HP, -20%DMG. Score: -45%),\n" +
+        "3 -> normal , 4 -> hard (enemy: +50% HP, +25%DMG. Score: +60%),\n" +
+        "5 -> impossibru (enemy: +250% HP, +100%DMG. Score: +150%)")]
+    [MyRangeLevelString(1,5,1)]
+    public int startingDifficulty;
 }
