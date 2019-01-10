@@ -39,7 +39,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088821225669862}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c84d09a7dd944e478b5dff1aca22dca, type: 3}
   m_Name: 
@@ -65,9 +65,5 @@ MonoBehaviour:
   bottom: 0
   left: 0
   right: 0
-  mapWidth: 0
-  mapHeight: 0
-  camWidth: 0
-  camHeight: 0
   offset: 1
   map: {fileID: 1088821225669862}

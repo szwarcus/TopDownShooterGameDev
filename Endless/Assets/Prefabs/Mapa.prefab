@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3716282470414011360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3716282470414011373}
+  - component: {fileID: 3716282470414011374}
+  - component: {fileID: 3716282470414011375}
+  m_Layer: 0
+  m_Name: Mapa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3716282470414011373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716282470414011360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.255491, y: 34.895294, z: 11.289139}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3716282470414011374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716282470414011360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a7aed91908b2048ab3a87b44075752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  offset: 1
+  map: {fileID: 3716282470414011360}
+--- !u!114 &3716282470414011375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3716282470414011360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa8d6e839a9fd94bb901bcfe31b08cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniMapList:
+  - {fileID: 11400000, guid: b4808a83dfaee8a41af3b0c9835d97cc, type: 2}
+  - {fileID: 11400000, guid: f5b106ee62d6b094cbc4403f944ba318, type: 2}
+  - {fileID: 11400000, guid: 4f8f2d2c70830174da14f6afe808a4cb, type: 2}
+  - {fileID: 11400000, guid: cd64a1e9c6731d9459e5e128c60d5a3a, type: 2}
+  - {fileID: 11400000, guid: fc8525fe6a233c041b326a0ac5ace558, type: 2}
+  - {fileID: 11400000, guid: 7509b5eb10139c84c9d064205e40ee0c, type: 2}
+  bigMapList:
+  - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  wall: {fileID: 1958891013373530, guid: 50c2b0c5c4d64eb499af91a6741150ea, type: 3}
+  zombie: {fileID: 1880198688402672, guid: 7c028f31c29cb994f9dad4f4858adbee, type: 3}
+  chest: {fileID: 5820792803539524257, guid: abd1937fc6c06b24786b9daaf1070da1, type: 3}
+  door: {fileID: 5820792803539524257, guid: cf370e196d4346a49b90bb43b15533c0, type: 3}

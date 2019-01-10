@@ -30,8 +30,8 @@ public class NextMap : MonoBehaviour {
         player = GameObject.FindGameObjectWithTag("Player");
         if (player == null)
             Debug.LogError("NextMap: player not found!");
-        mapWidth = transform.GetComponent<LevelGenerator>().width;
-        mapHeight = transform.GetComponent<LevelGenerator>().height;
+        mapWidth = 2 * 50; // transform.GetComponent<LevelGenerator>().width;
+        mapHeight = 2 * 50; // transform.GetComponent<LevelGenerator>().height;
         camHeight = 2f * Camera.main.orthographicSize;
         camWidth = camHeight * Camera.main.aspect;
     }
@@ -96,7 +96,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);   // usuwanie wszystkich obiektów przypisanych do prefaba, jest to końieczne, ponieważ prefab tworzy samego siebie
             }
-            clone.GetComponent<LevelGenerator>().GenerateLevel();
+//            clone.GetComponent<LevelGenerator>().GenerateLevel();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -112,7 +112,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-            clone.GetComponent<LevelGenerator>().GenerateLevel();
+//            clone.GetComponent<LevelGenerator>().GenerateLevel();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -128,7 +128,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-            clone.GetComponent<LevelGenerator>().GenerateLevel();
+//            clone.GetComponent<LevelGenerator>().GenerateLevel();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -144,7 +144,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-            clone.GetComponent<LevelGenerator>().GenerateLevel();
+//            clone.GetComponent<LevelGenerator>().GenerateLevel();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
