@@ -62,6 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa8d6e839a9fd94bb901bcfe31b08cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingMap: 0
   miniMapList:
   - {fileID: 11400000, guid: b4808a83dfaee8a41af3b0c9835d97cc, type: 2}
   - {fileID: 11400000, guid: f5b106ee62d6b094cbc4403f944ba318, type: 2}
@@ -69,8 +70,29 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cd64a1e9c6731d9459e5e128c60d5a3a, type: 2}
   - {fileID: 11400000, guid: fc8525fe6a233c041b326a0ac5ace558, type: 2}
   - {fileID: 11400000, guid: 7509b5eb10139c84c9d064205e40ee0c, type: 2}
+  - {fileID: 11400000, guid: 8389d6c2457c9d74488eeb37b0d475bf, type: 2}
+  - {fileID: 11400000, guid: b8fd6dd7636e809499b06f92f712f06f, type: 2}
+  - {fileID: 11400000, guid: 2cab3a56a48b05b4ab7a2373b1dd2421, type: 2}
+  - {fileID: 11400000, guid: c2a3d00f9e3203542a27905e37cd2a87, type: 2}
+  - {fileID: 11400000, guid: dfc1106fb95e8b248812fedcccaf7fe7, type: 2}
+  - {fileID: 11400000, guid: 09fcd19f99587854484397a7380e6bad, type: 2}
+  - {fileID: 11400000, guid: e2e6b57181cea154997e587b08f6bd25, type: 2}
+  - {fileID: 11400000, guid: 77df6b8a964c6504b9fc53bed7a50f4d, type: 2}
+  - {fileID: 11400000, guid: 977f5a6052aadf54684562238991e66c, type: 2}
+  - {fileID: 11400000, guid: 1d5391c94ca587f4d81dff79e7b2edf8, type: 2}
+  - {fileID: 11400000, guid: 932da300153931d4a8775c1110a1a493, type: 2}
   bigMapList:
   - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  - {fileID: 11400000, guid: 1a9d4aa9361d59e40bd1df30c6937ecb, type: 2}
+  - {fileID: 11400000, guid: 1a9d4aa9361d59e40bd1df30c6937ecb, type: 2}
+  - {fileID: 11400000, guid: 1a9d4aa9361d59e40bd1df30c6937ecb, type: 2}
+  - {fileID: 11400000, guid: 1a9d4aa9361d59e40bd1df30c6937ecb, type: 2}
+  - {fileID: 11400000, guid: 1a9d4aa9361d59e40bd1df30c6937ecb, type: 2}
+  - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  - {fileID: 11400000, guid: 7f3a3f65bff5e144ca0cb38a92c11807, type: 2}
+  - {fileID: 11400000, guid: f89d0f10bc708354582d1885ea55c998, type: 2}
   wall: {fileID: 1958891013373530, guid: 50c2b0c5c4d64eb499af91a6741150ea, type: 3}
   zombie: {fileID: 1880198688402672, guid: 7c028f31c29cb994f9dad4f4858adbee, type: 3}
   chest: {fileID: 5820792803539524257, guid: abd1937fc6c06b24786b9daaf1070da1, type: 3}
