@@ -1,0 +1,53 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BalanceLoader : MonoBehaviour
+{
+
+    public Balance balance;
+
+    public int enemySpawnRate;
+    public int enemyMoveSpeed;
+    public int enemyHitPoints;
+    public int enemyDamage;
+    public float enemyAttackSpeed;
+    public int playerMoveSpeed;
+    public int playerHitPoints;
+    public float weaponDamage;
+    public float weaponAttackSpeed;
+    public bool weaponAttackRange;
+    public int experiencePoints;
+    public float experiencePointsChange;
+    public int HitPointsUp;
+    public int rangeDamageUp;
+    public int meleeDamageUp;
+    public int changeRate;
+    public int hordeSpawnRate;
+    public int maxLevelSafeFromHorde;
+    public int startingDifficulty;
+
+    void Start()
+    {
+        this.enemySpawnRate = balance.enemySpawnRate;
+        this.enemyMoveSpeed = balance.enemyMoveSpeed;
+        this.enemyHitPoints = balance.enemyHitPoints;
+        this.enemyDamage = balance.enemyDamage;
+        this.enemyAttackSpeed = balance.enemyAttackSpeed;
+        this.playerMoveSpeed = balance.playerMoveSpeed;
+        this.playerHitPoints = balance.playerHitPoints;
+        this.weaponDamage = balance.weaponDamage;
+        this.weaponAttackSpeed = balance.weaponAttackSpeed;
+        this.weaponAttackRange = balance.weaponAttackRange;
+        this.experiencePoints = balance.experiencePoints;
+        this.experiencePointsChange = balance.experiencePointsChange;
+        this.HitPointsUp = balance.HitPointsUp;
+        this.rangeDamageUp = balance.rangeDamageUp;
+        this.meleeDamageUp = balance.meleeDamageUp;
+        this.changeRate = balance.changeRate;
+        this.hordeSpawnRate = balance.hordeSpawnRate;
+        this.maxLevelSafeFromHorde = balance.maxLevelSafeFromHorde;
+        this.startingDifficulty = balance.startingDifficulty;
+}
+
+}

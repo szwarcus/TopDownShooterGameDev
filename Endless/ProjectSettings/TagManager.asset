@@ -11,6 +11,9 @@ TagManager:
   - Ground
   - bullet
   - enemy
+  - chest
+  - door
+  - EM
   layers:
   - Default
   - TransparentFX

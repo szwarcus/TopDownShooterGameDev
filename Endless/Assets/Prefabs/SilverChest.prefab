@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4464552731406635190}
   m_Layer: 0
   m_Name: Chest
-  m_TagString: Untagged
+  m_TagString: chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 18a7900544a63a945bc42745ec896175, type: 2}
+  - {fileID: 2100000, guid: a8dcc0e5d3a02464cb63a04e632c9d11, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b2eda81610a6845a0635928e39edf3, type: 3}
+  m_Name: BigMap3
+  m_EditorClassIdentifier: 
+  mapLayout:
+    rows:
+    - row: 0500000006000000050000000300000003000000
+    - row: 0400000000000000640000000200000064000000
+    - row: 060000000100000000000000010000000a000000
+    - row: 6400000000000000020000000300000000000000
+    - row: 0300000008000000640000000700000064000000

@@ -96,7 +96,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);   // usuwanie wszystkich obiektów przypisanych do prefaba, jest to końieczne, ponieważ prefab tworzy samego siebie
             }
-//            clone.GetComponent<LevelGenerator>().GenerateLevel();
+            transform.parent.GetComponent<MapSettingsScript>().MapUp();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -112,7 +112,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-//            clone.GetComponent<LevelGenerator>().GenerateLevel();
+            transform.parent.GetComponent<MapSettingsScript>().MapUp();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -128,7 +128,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-//            clone.GetComponent<LevelGenerator>().GenerateLevel();
+            transform.parent.GetComponent<MapSettingsScript>().MapUp();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
@@ -144,7 +144,7 @@ public class NextMap : MonoBehaviour {
             {
                 DestroyImmediate(clone.transform.GetChild(0).gameObject);
             }
-//            clone.GetComponent<LevelGenerator>().GenerateLevel();
+            transform.parent.GetComponent<MapSettingsScript>().MapUp();
             clone.name = "sektor";
             clone.GetComponent<NextMap>().CheckNeighbors();
         }
