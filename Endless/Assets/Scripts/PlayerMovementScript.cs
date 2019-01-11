@@ -39,11 +39,12 @@ public class PlayerMovementScript : MonoBehaviour
         Camera camera = FindObjectOfType<Camera>();
         Ray cameraRay = camera.ScreenPointToRay(Input.mousePosition);
         Plane groundPlane = new Plane(Vector3.up, Vector3.zero);
+        Transform gunTransform = transform.GetChild(0);
         float rayLength;
         if(groundPlane.Raycast(cameraRay, out rayLength))
         {
             Vector3 pointToLook = cameraRay.GetPoint(rayLength);
-            transform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
+            gunTransform.LookAt(new Vector3(pointToLook.x, transform.position.y, pointToLook.z));
         }
     }
 
