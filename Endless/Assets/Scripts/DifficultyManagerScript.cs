@@ -13,6 +13,9 @@ public class DifficultyManagerScript : MonoBehaviour
     [SerializeField]
     private BalanceLoader balanceLoader;
 
+    [SerializeField]
+    private HordeManager HM;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,11 +36,12 @@ public class DifficultyManagerScript : MonoBehaviour
             mapDifficultyLevel = mapDifficultyLevel + 1;
             UpdateDifficulty();
         }
+        HM.SpawnHorde();
     }
 
     private void UpdateDifficulty()
     {
-
+        HM.UpdateMapDifficultyLevel(mapDifficultyLevel);
     }
 
 }

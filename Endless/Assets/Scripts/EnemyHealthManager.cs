@@ -10,6 +10,7 @@ public class EnemyHealthManager : MonoBehaviour
     public TextMesh healthText;
     public int enemyType;
     public float moveSpeed = 3.5f;
+    public int scorePoints;
 
     private EnemyManagerScript enemyManagerScript;
 
@@ -28,6 +29,7 @@ public class EnemyHealthManager : MonoBehaviour
         healthText = GetComponentInChildren<TextMesh>();
         healthText.text = currentHealth.ToString()+"/"+health.ToString();
         moveSpeed = enemyManagerScript.EnemyMoveSpeed(enemyType);
+        scorePoints = enemyManagerScript.EnemyScore(enemyType);
         gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed;
     }
 
@@ -36,6 +38,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if(currentHealth<=0)
         {
+            GameObject.FindGameObjectWithTag("SM").GetComponent<ScoreManager>().AddScore(scorePoints);
             Destroy(gameObject);
         }
     }

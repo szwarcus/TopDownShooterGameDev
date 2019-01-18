@@ -89,4 +89,18 @@ public class EnemyManagerScript : MonoBehaviour
         return ats;
     }
 
+    public float EnemyDistance(int nr)
+    {
+        float dist = 0;
+        dist = enemies[nr].distance;
+        return dist;
+    }
+
+    public int EnemyScore(int nr)
+    {
+        int score = 0;
+        score = enemies[nr].score + difficultyManagerScript.mapDifficultyLevel * 3;
+        return score;
+    }
+
 }

@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1bae94fcba90234db7438be5c729709, type: 3}
-  m_Name: Zombie1
+  m_Name: RareTheScientist
   m_EditorClassIdentifier: 
-  enemyName: Zombie
-  enemyClass: 1
-  enemyMoveSpeed: 1
-  enemyHitPoints: 10
+  enemyName: Scientist
+  enemyClass: 2
+  enemyMoveSpeed: 3
+  enemyHitPoints: 100
   enemyDamage: 10
-  enemyAttackSpeed: 0.2
+  enemyAttackSpeed: 1.8000001
   enemyAttackRange: 0
-  enemyDescription: The weakest
+  distance: 15
+  score: 50
+  enemyDescription: Zombie scientist! Prepare yourself! Average Hp, attack speed and
+    movment speed. Low dmg. Rare.

@@ -30,4 +30,4 @@ MonoBehaviour:
   changeRate: 10
   hordeSpawnRate: 3
   maxLevelSafeFromHorde: 1
-  startingDifficulty: 1
+  startingDifficulty: 5

@@ -14,6 +14,8 @@ TagManager:
   - chest
   - door
   - EM
+  - SM
+  - DM
   layers:
   - Default
   - TransparentFX

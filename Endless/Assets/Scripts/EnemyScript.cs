@@ -9,8 +9,16 @@ public class EnemyScript : MonoBehaviour
      * Skrypt pozwala na poruszanie się przeciwnika na pozycję "ofiary" (gracza) jeśli znajduje się w pewnej odległości od gracza. 
      * Do poruszania się wykorzystywany jest navMeshAgent. Jeśli przeciwnik znajduję się w znacznej odległości od gracza to navMeshAgent zostaje wyłączony.
      */
+    [SerializeField]
     public Transform victim;
     private NavMeshAgent meshAgent;
+
+    private Vector3 destination;
+
+    private bool horde = false;
+
+    [SerializeField]
+    private float distance = 10;
 
     // przypisanie referencji
     private void Awake()
@@ -23,7 +31,18 @@ public class EnemyScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if(!horde)
+            distance = GameObject.FindGameObjectWithTag("EM").GetComponent<EnemyManagerScript>().EnemyDistance(gameObject.GetComponent<EnemyHealthManager>().enemyType);
+        destination = transform.position;
+    }
 
+    public void SetHorde(bool value)
+    {
+        horde = value;
+        if (horde)
+        {
+            distance = 25;
+        }
     }
 
     // Update is called once per frame
@@ -31,14 +50,18 @@ public class EnemyScript : MonoBehaviour
     {
         if (victim) // sprawdzamy czy przeciwnik znalazł sobie cel
         {
-            if (Mathf.Abs(victim.position.x - transform.position.x) < 10 && Mathf.Abs(victim.position.z - transform.position.z) < 10)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
+            if (Mathf.Abs(victim.position.x - transform.position.x) < distance + 10 && Mathf.Abs(victim.position.z - transform.position.z) < distance + 10)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
+            {
                 if (gameObject.GetComponent<NavMeshAgent>().enabled == true)
-                    meshAgent.SetDestination(victim.position);
+                    meshAgent.SetDestination(destination);
                 else
                 {
                     gameObject.GetComponent<NavMeshAgent>().enabled = true;
-                    meshAgent.SetDestination(victim.position);
+                    meshAgent.SetDestination(destination);
                 }
+                if (Mathf.Abs(victim.position.x - transform.position.x) < distance && Mathf.Abs(victim.position.z - transform.position.z) < distance)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
+                    destination = victim.position;
+            }
             else
             {
                 gameObject.GetComponent<NavMeshAgent>().enabled = false;
@@ -48,6 +71,8 @@ public class EnemyScript : MonoBehaviour
         {
             FindVictim();       // brak celu, znajdź cel
         }
+        if (Mathf.Abs(victim.position.x - transform.position.x) > 50 || Mathf.Abs(victim.position.z - transform.position.z) > 50)
+            Destroy(gameObject);
     }
 
     // Znajduje obiekt gracza i bierze go sobie za cel

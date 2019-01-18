@@ -33,6 +33,14 @@ public class Enemy : ScriptableObject
     [Tooltip("What type of atack he use (true -> range weapon, false -> melee weapon")]
     public bool enemyAttackRange;
 
+    [Tooltip("Distance between player and enemy when enemy move torwards player")]
+    [MyRange(1f, 40f, 0.2f)]
+    public float distance;
+
+    [Tooltip("Points that player will receive for killing enemy")]
+    [Range(10, 500)]
+    public int score;
+
     [Tooltip("Enemy description")]
     public string enemyDescription;
 
