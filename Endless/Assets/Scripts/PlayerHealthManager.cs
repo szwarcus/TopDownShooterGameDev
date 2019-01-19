@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
+    private int maxHealth;
     public int startingHealth;
     private int currentHealth;
     public GameObject healthBarObject;
@@ -14,13 +15,18 @@ public class PlayerHealthManager : MonoBehaviour
 
     private Renderer rend;
     private Color storedColor;
+
+    public Text maxHpText;
+    public Text currentHpText;
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = startingHealth;
         currentHealth = startingHealth;
         rend = GetComponent<Renderer>();
         storedColor = rend.material.GetColor("_Color");
         healthBarObject.GetComponent<Slider>().value = currentHealth;
+        UpdateCanvas();
     }
 
     // Update is called once per frame
@@ -41,12 +47,30 @@ public class PlayerHealthManager : MonoBehaviour
             }
         }
     }
+
     public void HurtPlayer(int damageAmount)
     {
         currentHealth -= damageAmount;
-        healthBarObject.GetComponent<Slider>().value = currentHealth;
+//        healthBarObject.GetComponent<Slider>().value = currentHealth;
 
         flashCounter = flashLength;
         rend.material.SetColor("_Color", Color.white);
+        UpdateCanvas();
+    }
+
+    public void ChangeHealth(int value)
+    {
+        int oldMaxHP = maxHealth;
+        maxHealth = startingHealth + value;
+        currentHealth = currentHealth + ( -oldMaxHP + maxHealth);
+        UpdateCanvas();
+    }
+
+    private void UpdateCanvas()
+    {
+        maxHpText.text = maxHealth.ToString();
+        currentHpText.text = currentHealth.ToString();
+        healthBarObject.GetComponent<Slider>().maxValue = maxHealth;
+        healthBarObject.GetComponent<Slider>().value = currentHealth;
     }
 }

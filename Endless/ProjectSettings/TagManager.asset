@@ -16,6 +16,8 @@ TagManager:
   - EM
   - SM
   - DM
+  - PLM
+  - BM
   layers:
   - Default
   - TransparentFX

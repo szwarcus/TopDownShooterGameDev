@@ -22,12 +22,12 @@ MonoBehaviour:
   weaponDamage: 10
   weaponAttackSpeed: 2
   weaponAttackRange: 0
-  experiencePoints: 1
-  experiencePointsChange: 0.2
+  experiencePoints: 6
+  experiencePointsChange: 0.2436
   HitPointsUp: 1
-  rangeDamageUp: 1
-  meleeDamageUp: 1
-  changeRate: 10
+  damageUp: 1
+  speedUp: 0.099999994
+  changeRate: 3
   hordeSpawnRate: 3
   maxLevelSafeFromHorde: 1
   startingDifficulty: 5

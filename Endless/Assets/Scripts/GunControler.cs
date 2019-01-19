@@ -7,6 +7,7 @@ public class GunControler : MonoBehaviour
     public bool isFiring;
     public BulletController bullet;
     private float bulletSpeed;
+    public int skillDamage;
 
     private float timeBetweenShots;
     private float nextFire;
@@ -29,6 +30,11 @@ public class GunControler : MonoBehaviour
         timeBetweenShots = BM.timeBetweenShots;
     }
 
+    public void UpdateDamage(int value)
+    {
+        skillDamage = value;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -40,6 +46,7 @@ public class GunControler : MonoBehaviour
                 shotCounter = timeBetweenShots;
                 BulletController newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                 newBullet.speed = bulletSpeed;
+                newBullet.skillDamage = skillDamage;
 
             }
         }

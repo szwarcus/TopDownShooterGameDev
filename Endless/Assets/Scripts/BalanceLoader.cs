@@ -20,12 +20,14 @@ public class BalanceLoader : MonoBehaviour
     public int experiencePoints;
     public float experiencePointsChange;
     public int HitPointsUp;
-    public int rangeDamageUp;
-    public int meleeDamageUp;
+    public int damageUp;
+    public float speedUp;
     public int changeRate;
     public int hordeSpawnRate;
     public int maxLevelSafeFromHorde;
     public int startingDifficulty;
+
+    public bool loadDone = false;
 
     void Start()
     {
@@ -42,12 +44,13 @@ public class BalanceLoader : MonoBehaviour
         this.experiencePoints = balance.experiencePoints;
         this.experiencePointsChange = balance.experiencePointsChange;
         this.HitPointsUp = balance.HitPointsUp;
-        this.rangeDamageUp = balance.rangeDamageUp;
-        this.meleeDamageUp = balance.meleeDamageUp;
+        this.damageUp = balance.damageUp;
+        this.speedUp = balance.speedUp;
         this.changeRate = balance.changeRate;
         this.hordeSpawnRate = balance.hordeSpawnRate;
         this.maxLevelSafeFromHorde = balance.maxLevelSafeFromHorde;
         this.startingDifficulty = balance.startingDifficulty;
-}
+        loadDone = true;
+    }
 
 }

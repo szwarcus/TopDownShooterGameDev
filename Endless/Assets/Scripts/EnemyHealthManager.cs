@@ -30,7 +30,10 @@ public class EnemyHealthManager : MonoBehaviour
         healthText.text = currentHealth.ToString()+"/"+health.ToString();
         moveSpeed = enemyManagerScript.EnemyMoveSpeed(enemyType);
         scorePoints = enemyManagerScript.EnemyScore(enemyType);
-        gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed;
+        if(gameObject.GetComponent<EnemyScript>().Horde == false)
+            gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed;
+        else
+            gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed * 3;
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if(currentHealth<=0)
         {
+            GameObject.FindGameObjectWithTag("PLM").GetComponent<PlayerLevel>().GainXp(1);
             GameObject.FindGameObjectWithTag("SM").GetComponent<ScoreManager>().AddScore(scorePoints);
             Destroy(gameObject);
         }
@@ -47,5 +51,6 @@ public class EnemyHealthManager : MonoBehaviour
     {
         currentHealth -= damage;
         healthText.text = currentHealth.ToString() + "/" + health.ToString();
+
     }
 }

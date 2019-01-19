@@ -20,6 +20,14 @@ public class EnemyScript : MonoBehaviour
     [SerializeField]
     private float distance = 10;
 
+    public bool Horde
+    {
+        get
+        {
+            return horde;
+        }
+    }
+
     // przypisanie referencji
     private void Awake()
     {
@@ -45,27 +53,34 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    IEnumerator Example()
+    {
+        float random = Random.Range(0f, 2f);
+        yield return new WaitForSeconds(random);
+        if (Mathf.Abs(victim.position.x - transform.position.x) < distance + 10 && Mathf.Abs(victim.position.z - transform.position.z) < distance + 10)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
+        {
+            if (gameObject.GetComponent<NavMeshAgent>().enabled == true)
+                meshAgent.SetDestination(destination);
+            else
+            {
+                gameObject.GetComponent<NavMeshAgent>().enabled = true;
+                meshAgent.SetDestination(destination);
+            }
+            if (Mathf.Abs(victim.position.x - transform.position.x) < distance && Mathf.Abs(victim.position.z - transform.position.z) < distance)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
+                destination = victim.position;
+        }
+        else
+        {
+            gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (victim) // sprawdzamy czy przeciwnik znalazł sobie cel
         {
-            if (Mathf.Abs(victim.position.x - transform.position.x) < distance + 10 && Mathf.Abs(victim.position.z - transform.position.z) < distance + 10)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
-            {
-                if (gameObject.GetComponent<NavMeshAgent>().enabled == true)
-                    meshAgent.SetDestination(destination);
-                else
-                {
-                    gameObject.GetComponent<NavMeshAgent>().enabled = true;
-                    meshAgent.SetDestination(destination);
-                }
-                if (Mathf.Abs(victim.position.x - transform.position.x) < distance && Mathf.Abs(victim.position.z - transform.position.z) < distance)   // Sprawdzamy w jakiej odległości znajduje się przeciwnik od gracza
-                    destination = victim.position;
-            }
-            else
-            {
-                gameObject.GetComponent<NavMeshAgent>().enabled = false;
-            }
+            StartCoroutine(Example());
         }
         else
         {

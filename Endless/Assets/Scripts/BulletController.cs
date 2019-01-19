@@ -8,6 +8,7 @@ public class BulletController : MonoBehaviour
     private float bulletLifeTime=2;
 
     public int damageToGive;
+    public int skillDamage = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class BulletController : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive);
+            other.gameObject.GetComponent<EnemyHealthManager>().HurtEnemy(damageToGive + skillDamage);
             //Destroy(other.gameObject);
             Destroy(gameObject);
             //GameObject instantiatedParticleSystem = Instantiate(particleExplosionSystem, transform.position, transform.rotation);

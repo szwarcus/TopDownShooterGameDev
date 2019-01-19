@@ -57,7 +57,7 @@ public class Balance : ScriptableObject
     [Header("Leveling Settings")]
 
     [Tooltip("Amount of experience to first level")]
-    [Range(1, 5)]
+    [Range(5, 20)]
     public int experiencePoints;
 
     [Tooltip("Experience increase between levels")]
@@ -68,20 +68,20 @@ public class Balance : ScriptableObject
     [Range(1, 3)]
     public int HitPointsUp;
 
-    [Tooltip("Amount of range damage increase per point")]
+    [Tooltip("Amount of damage increase per point")]
     [Range(1, 3)]
-    public int rangeDamageUp;
+    public int damageUp;
 
-    [Tooltip("Amount of melee damage increase per point")]
-    [Range(1, 3)]
-    public int meleeDamageUp;
+    [Tooltip("Amount of movement speed increase per point")]
+    [MyRange(0.01f, 0.2f, 0.005f)]
+    public float speedUp;
 
 
 
     [Header("Difficulty progress level Settings")]
 
     [Tooltip("The number of levels generated after which internal level of difficulty will be increased")]
-    [Range(10, 50)]
+    [Range(3, 20)]
     public int changeRate;
 
     [Tooltip("The number of progress levels after which horde will spawn")]

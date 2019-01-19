@@ -14,6 +14,7 @@ public class HordeManager : MonoBehaviour
     private int maxLevelSafeFromHorde;
     [SerializeField]
     private float spawnChance = 0.5f;
+    private float HordeBaseSpawnChance = 0.5f;
 
     [SerializeField]
     private GameObject player;
@@ -42,6 +43,7 @@ public class HordeManager : MonoBehaviour
     private void Start()
     {
         maxLevelSafeFromHorde = BL.maxLevelSafeFromHorde;
+        HordeBaseSpawnChance = BL.hordeSpawnRate;
     }
 
     public void UpdateMapDifficultyLevel(int value)
@@ -54,16 +56,34 @@ public class HordeManager : MonoBehaviour
         if(mapDifficultyLevel >= maxLevelSafeFromHorde)
         {
             float random = Random.Range(0f, 1f);
-            if (random > 0f - spawnChance)
+            if (random > 1f - spawnChance)
             {
                 Debug.Log("Spawn Horde!");
                 spawnChance = 0f;
-                SpawnEnemy(1 + hordelevel * 2, Direction.N);
+                float randomDir = Random.Range(0f, 1f);
+                Direction dir;
+                if (randomDir < 0.25f)
+                {
+                    dir = Direction.N;
+                }
+                else if (randomDir < 0.5f)
+                {
+                    dir = Direction.E;
+                }
+                else if (randomDir < 0.75f)
+                {
+                    dir = Direction.W;
+                }
+                else
+                {
+                    dir = Direction.S;
+                }
+                SpawnEnemy(1 + hordelevel * 2, dir);
                 hordelevel += 1;
             }
             else
             {
-                spawnChance = spawnChance + 0.05f;
+                spawnChance = spawnChance + 0.02f * HordeBaseSpawnChance;
             }
         }
     }
@@ -73,17 +93,17 @@ public class HordeManager : MonoBehaviour
         Vector3 pos = new Vector3();
         switch (direction)
         {
-            case Direction.N:
-                pos = new Vector3(player.transform.position.x + 10, 0, player.transform.position.z);
-                break;
             case Direction.E:
-                pos = new Vector3(player.transform.position.x, 0, player.transform.position.z - 10);
+                pos = new Vector3(player.transform.position.x + 15, 0, player.transform.position.z);
                 break;
             case Direction.S:
-                pos = new Vector3(player.transform.position.x - 10, 0, player.transform.position.z);
+                pos = new Vector3(player.transform.position.x, 0, player.transform.position.z - 15);
                 break;
             case Direction.W:
-                pos = new Vector3(player.transform.position.x, 0, player.transform.position.z + 10);
+                pos = new Vector3(player.transform.position.x - 15, 0, player.transform.position.z);
+                break;
+            case Direction.N:
+                pos = new Vector3(player.transform.position.x, 0, player.transform.position.z + 15);
                 break;
         }
         GameObject clone = Instantiate(zombie, pos, player.transform.rotation);

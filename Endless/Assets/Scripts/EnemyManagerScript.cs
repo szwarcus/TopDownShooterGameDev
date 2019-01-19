@@ -10,7 +10,10 @@ public class EnemyManagerScript : MonoBehaviour
     public int enemyHitPointsChange;
     public int enemyDamageChange;
     public float enemyAttackSpeedChange;
+    [SerializeField]
     private int gDL = 0;
+
+    public bool loadDone = false;
 
     [SerializeField]
     private DifficultyManagerScript difficultyManagerScript;
@@ -22,7 +25,19 @@ public class EnemyManagerScript : MonoBehaviour
 
     private void Start()
     {
-        gDL = difficultyManagerScript.gameDifficultyLevel;
+        StartCoroutine(LoadData());
+    }
+
+    IEnumerator LoadData()
+    {
+        yield return new WaitForSeconds(1);
+        if(difficultyManagerScript.loadDone == true)
+        {
+            gDL = difficultyManagerScript.gameDifficultyLevel;
+            loadDone = true;
+            StopCoroutine(LoadData());
+        }
+
     }
 
     public int EnemyHitPoints(int nr)

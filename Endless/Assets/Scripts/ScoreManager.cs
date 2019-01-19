@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     private int gDL = 0;
     [SerializeField]
     private int score;
+
+    public Text scoreText;
 
     public int Score
     {
@@ -19,6 +22,7 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         gDL = GameObject.FindGameObjectWithTag("DM").GetComponent<DifficultyManagerScript>().gameDifficultyLevel;
+        UpdateScoreText();
     }
 
     public void AddScore(int value)
@@ -41,5 +45,11 @@ public class ScoreManager : MonoBehaviour
                 score += (int)(value * 2.5);
                 break;
         }
+        UpdateScoreText();
+    }
+
+    private void UpdateScoreText()
+    {
+        scoreText.text = score.ToString();
     }
 }

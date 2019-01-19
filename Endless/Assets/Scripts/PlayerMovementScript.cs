@@ -10,8 +10,9 @@ public class PlayerMovementScript : MonoBehaviour
 
     private BalanceMenager BM;
 
-
+    [SerializeField]
     private float speed;
+    private float baseSpeed;
 
     private void Awake()
     {
@@ -24,7 +25,13 @@ public class PlayerMovementScript : MonoBehaviour
     {
         speed = BM.playerSpeed;         // wczytanie prędkości z menagera balansu
         transform.position = new Vector3(0, 0.5f, 0);
+        baseSpeed = speed;
 
+    }
+
+    public void UpdateSpeed(float value)
+    {
+        speed = baseSpeed + value;
     }
 
     // Funkcja pozwala na przemieszczenie gracza w zadanym kierunku

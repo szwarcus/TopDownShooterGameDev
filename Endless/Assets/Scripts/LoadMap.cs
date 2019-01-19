@@ -118,13 +118,13 @@ public class LoadMap : MonoBehaviour
                 MakeStrusture(random, i, j, position);
             }
         }
-        else
+        else 
         {
-            if (Random.value >= 1f) // Should we spawn a zombie?
+            if (Random.value >= 0.99f) // Should we spawn a zombie?
             {
                 // Spawn the zombie
-                //                        Vector3 pos = new Vector3(i * 2 - widthMiniMap / 2f + position.x, 1f, j * 2 - heightMiniMap / 2f + position.y);
-                //                        Instantiate(zombie, pos, Quaternion.identity, transform);
+                Vector3 pos = new Vector3(i * 2 - widthMiniMap / 2f + position.x, 1f, j * 2 - heightMiniMap / 2f + position.y);
+                Instantiate(zombie, pos, Quaternion.identity, transform);
             }
         }
     }

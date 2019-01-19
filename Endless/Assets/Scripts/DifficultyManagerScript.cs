@@ -10,6 +10,8 @@ public class DifficultyManagerScript : MonoBehaviour
 
     public int gameDifficultyLevel; // external difficulty level set by the player
 
+    public bool loadDone = false;
+
     [SerializeField]
     private BalanceLoader balanceLoader;
 
@@ -19,12 +21,19 @@ public class DifficultyManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LoadFromBalancer();
+        StartCoroutine(LoadData());
     }
 
-    private void LoadFromBalancer()
+    IEnumerator LoadData()
     {
-        gameDifficultyLevel = balanceLoader.startingDifficulty;
+        yield return new WaitForSeconds(1);
+        if (balanceLoader.loadDone == true)
+        {
+            gameDifficultyLevel = balanceLoader.startingDifficulty;
+            difficultyChangePoint = balanceLoader.changeRate;
+            loadDone = true;
+            StopCoroutine(LoadData());
+        }
     }
 
     public void MapLevelUp()
