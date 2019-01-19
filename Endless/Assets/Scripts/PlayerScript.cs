@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour {
 
     private void Update()
     {
-        if(pos.x + 45 <= transform.position.x || pos.x - 45 >= transform.position.x || pos.z + 45 <= transform.position.z || pos.z - 45 >= transform.position.z)
+        if(pos.x + 35 <= transform.position.x || pos.x - 35 >= transform.position.x || pos.z + 35 <= transform.position.z || pos.z - 35 >= transform.position.z)
         {
             GameObject.FindGameObjectWithTag("Ground").transform.position = new Vector3(transform.position.x, GameObject.FindGameObjectWithTag("Ground").transform.position.y, transform.position.z);
             navMesh.GetComponent<NavMeshSurface>().BuildNavMesh();
