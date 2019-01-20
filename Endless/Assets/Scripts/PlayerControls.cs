@@ -18,6 +18,7 @@ public class PlayerControls : MonoBehaviour
         movementScript = transform.GetComponent<PlayerMovementScript>();
         if (movementScript == null)
             Debug.LogError("PlayerControls: player movement script not found!");
+        gun.choosedWeapon = gun.we1.weapon[0];
     }
 
     void Update()
@@ -54,6 +55,30 @@ public class PlayerControls : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             gun.isFiring = false;
+        }
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            gun.choosedWeapon = gun.we1.weapon[0];
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            gun.choosedWeapon = gun.we1.weapon[1];
+        }
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            gun.choosedWeapon = gun.we1.weapon[2];
+        }
+        if (Input.GetKey(KeyCode.Alpha4))
+        {
+            gun.choosedWeapon = gun.we1.weapon[3];
+        }
+        if (Input.GetKey(KeyCode.Alpha5))
+        {
+            gun.choosedWeapon = gun.we1.weapon[4];
+        }
+        if (Input.GetKey(KeyCode.R))
+        {
+            gun.Reload();
         }
     }
 }

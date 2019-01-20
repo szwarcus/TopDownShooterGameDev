@@ -112,7 +112,7 @@ public class PlayerLevel : MonoBehaviour
 
     private void GetInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.F1))
         {
             if(freePoints > 0)
             {
@@ -121,7 +121,7 @@ public class PlayerLevel : MonoBehaviour
                 UpdateStats(Stat.str);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
+        if (Input.GetKeyDown(KeyCode.F2))
         {
             if (freePoints > 0)
             {
@@ -130,7 +130,7 @@ public class PlayerLevel : MonoBehaviour
                 UpdateStats(Stat.agi);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (Input.GetKeyDown(KeyCode.F3))
         {
             if (freePoints > 0)
             {
@@ -140,7 +140,7 @@ public class PlayerLevel : MonoBehaviour
                 UpdateStats(Stat.vit);
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha9))
+        if (Input.GetKeyDown(KeyCode.F9))
         {
             AddPassivePoint();
         }

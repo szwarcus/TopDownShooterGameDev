@@ -39,5 +39,11 @@ public class BulletController : MonoBehaviour
 
             // CameraShaker.Instance.ShakeOnce(4f, 4f, .1f, 1f);
         }
+        if (other.gameObject.tag == "wall" ||other.gameObject.tag=="door")
+        {
+            Destroy(gameObject);
+
+        }
     }
+   
 }
