@@ -19,6 +19,8 @@ public class GunControler : MonoBehaviour
     public Image weaponImage;
     public Text ammunitionText;
 
+    public audioSoundsSkrypt audio;
+
 
     public Transform firePoint;
   
@@ -46,7 +48,16 @@ public class GunControler : MonoBehaviour
             {
                 shotCounter = timeBetweenShots;
                 Shoot();
-
+                audio.Shoot(true, 1);
+            }
+        }
+        else if(isFiring && choosedWeapon.currentAmmo == 0)
+        {
+            shotCounter -= Time.deltaTime;
+            if (shotCounter <= 0)
+            {
+                shotCounter = timeBetweenShots;
+                audio.Shoot(false, 0);
             }
         }
         else
@@ -70,6 +81,7 @@ public class GunControler : MonoBehaviour
     {
         if (choosedWeapon.currentAmmo<choosedWeapon.magazineAmmo && choosedWeapon.totalMaxAmmo>0)
         {
+            audio.Reload();
             int ammoToAdd = choosedWeapon.magazineAmmo - choosedWeapon.currentAmmo;
             if (ammoToAdd<choosedWeapon.totalMaxAmmo)
             {

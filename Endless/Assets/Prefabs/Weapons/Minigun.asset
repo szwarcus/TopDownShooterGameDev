@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992a8827f5e66f348a9783cdfd275a3d, type: 3}
   m_Name: Minigun
   m_EditorClassIdentifier: 
-  weaponDamage: 0
+  weaponDamage: 10
   weaponAttackSpeed: 0.01
   weaponAttackRange: 1
   weaponSprite: {fileID: 21300000, guid: 29eb9d3b38084fa45a09b6db9fdb1da3, type: 3}

@@ -12,6 +12,8 @@ public class EnemyHealthManager : MonoBehaviour
     public float moveSpeed = 3.5f;
     public int scorePoints;
 
+    public EnemyAudio audio;
+
     private EnemyManagerScript enemyManagerScript;
 
     private void Awake()
@@ -27,10 +29,10 @@ public class EnemyHealthManager : MonoBehaviour
         currentHealth = enemyManagerScript.EnemyHitPoints(enemyType);
         health = currentHealth;
         healthText = GetComponentInChildren<TextMesh>();
-        healthText.text = currentHealth.ToString()+"/"+health.ToString();
+        healthText.text = currentHealth.ToString() + "/" + health.ToString();
         moveSpeed = enemyManagerScript.EnemyMoveSpeed(enemyType);
         scorePoints = enemyManagerScript.EnemyScore(enemyType);
-        if(gameObject.GetComponent<EnemyScript>().Horde == false)
+        if (gameObject.GetComponent<EnemyScript>().Horde == false)
             gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed;
         else
             gameObject.GetComponent<NavMeshAgent>().speed = moveSpeed * 3;
@@ -49,6 +51,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void HurtEnemy(int damage)
     {
+        audio.Hit();
         currentHealth -= damage;
         healthText.text = currentHealth.ToString() + "/" + health.ToString();
 

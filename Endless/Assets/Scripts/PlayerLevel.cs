@@ -39,6 +39,8 @@ public class PlayerLevel : MonoBehaviour
     public Text vitText;
     public Text freePointsText;
 
+    public PlayerAudio audio;
+
     enum Stat
     {
         str,
@@ -90,6 +92,7 @@ public class PlayerLevel : MonoBehaviour
 
     private void LevelUp()
     {
+        audio.LevelUp();
         AddPassivePoint();
         level += 1;
         currentLevelExp = currentLevelExp - nextLevelExp;

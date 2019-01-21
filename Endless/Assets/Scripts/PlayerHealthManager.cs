@@ -19,6 +19,8 @@ public class PlayerHealthManager : MonoBehaviour
 
     public Text maxHpText;
     public Text currentHpText;
+
+    public PlayerAudio audio;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void HurtPlayer(int damageAmount)
     {
+        audio.Hit();
         currentHealth -= damageAmount;
 //        healthBarObject.GetComponent<Slider>().value = currentHealth;
 

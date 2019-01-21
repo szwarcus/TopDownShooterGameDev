@@ -28,6 +28,9 @@ public class EnemyScript : MonoBehaviour
         }
     }
 
+    public EnemyAudio audio;
+    private bool flag = false;
+
     // przypisanie referencji
     private void Awake()
     {
@@ -88,10 +91,31 @@ public class EnemyScript : MonoBehaviour
         }
         if (Mathf.Abs(victim.position.x - transform.position.x) > 50 || Mathf.Abs(victim.position.z - transform.position.z) > 50)
             Destroy(gameObject);
+        if ((Mathf.Abs(victim.position.x - transform.position.x) < 5 && Mathf.Abs(victim.position.z - transform.position.z) < 5) && !flag && victim)
+        {
+            Debug.Log("Start " + gameObject.name);
+            StartCoroutine(Sound());
+            flag = true;
+        }
+        else if (Mathf.Abs(victim.position.x - transform.position.x) >= 4 && Mathf.Abs(victim.position.z - transform.position.z) >= 4 && victim)
+        {
+//            Debug.Log("End " + gameObject.name);
+            StopCoroutine(Sound());
+            flag = false;
+        }
+
     }
 
-    // Znajduje obiekt gracza i bierze go sobie za cel
-    private void FindVictim()
+    IEnumerator Sound()
+    {
+        Debug.Log("Siema");
+        audio.Grandma();
+        float random = Random.Range(3f, 7f);
+        yield return new WaitForSeconds(random);
+    }
+
+// Znajduje obiekt gracza i bierze go sobie za cel
+private void FindVictim()
     {
         victim = GameObject.FindGameObjectWithTag("Player").transform;
         if (victim == null)

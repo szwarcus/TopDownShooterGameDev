@@ -16,7 +16,7 @@ MonoBehaviour:
   weaponAttackSpeed: 0.099999994
   weaponAttackRange: 0
   weaponSprite: {fileID: 21300000, guid: 955a670961b358640aa23f3aa828501c, type: 3}
-  totalMaxAmmo: 150
+  totalMaxAmmo: 966
   magazineAmmo: 50
   currentAmmo: 50
   reloadTime: 0
